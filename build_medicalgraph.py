@@ -8,15 +8,16 @@ import os
 import json
 from py2neo import Graph,Node
 
+
 class MedicalGraph:
     def __init__(self):
         cur_dir = '/'.join(os.path.abspath(__file__).split('/')[:-1])
         self.data_path = os.path.join(cur_dir, 'data/medical.json')
         self.g = Graph(
-            host="127.0.0.1",  # neo4j 搭载服务器的ip地址，ifconfig可获取到
+            host="193.112.37.5",  # neo4j 搭载服务器的ip地址，ifconfig可获取到
             http_port=7474,  # neo4j 服务器监听的端口号
-            user="lhy",  # 数据库user name，如果没有更改过，应该是neo4j
-            password="lhy123")
+            user="neo4j",  # 数据库user name，如果没有更改过，应该是neo4j
+            password="123456")
 
     '''读取文件'''
     def read_nodes(self):
@@ -44,7 +45,6 @@ class MedicalGraph:
         rels_symptom = [] #疾病症状关系
         rels_acompany = [] # 疾病并发关系
         rels_category = [] #　疾病与科室之间的关系
-
 
         count = 0
         for data in open(self.data_path):
@@ -105,7 +105,7 @@ class MedicalGraph:
             if 'cure_way' in data_json:
                 disease_dict['cure_way'] = data_json['cure_way']
 
-            if  'cure_lasttime' in data_json:
+            if 'cure_lasttime' in data_json:
                 disease_dict['cure_lasttime'] = data_json['cure_lasttime']
 
             if 'cured_prob' in data_json:
@@ -264,7 +264,8 @@ class MedicalGraph:
         return
 
 
-
 if __name__ == '__main__':
     handler = MedicalGraph()
+    # handler.create_graphnodes()
+    handler.create_graphrels()
     # handler.export_data()

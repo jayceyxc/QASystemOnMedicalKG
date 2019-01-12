@@ -4,15 +4,17 @@
 # Author: lhy<lhy_in_blcu@126.com,https://huangyong.github.io>
 # Date: 18-10-3
 
-
 import urllib.request
 import urllib.parse
 from lxml import etree
 import pymongo
 import re
 
-'''基于司法网的犯罪案件采集'''
+
 class CrimeSpider:
+    """
+    基于司法网的犯罪案件采集
+    """
     def __init__(self):
         self.conn = pymongo.MongoClient()
         self.db = self.conn['medical']

@@ -4,6 +4,7 @@
 # Author: lhy<lhy_in_blcu@126.com,https://huangyong.github.io>
 # Date: 18-3-26
 
+
 class CutWords:
     def __init__(self):
         dict_path = './disease.txt'

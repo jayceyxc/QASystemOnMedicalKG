@@ -6,7 +6,8 @@
 import pymongo
 from lxml import etree
 import os
-from max_cut import *
+from .max_cut import *
+
 
 class MedicalGraph:
     def __init__(self):

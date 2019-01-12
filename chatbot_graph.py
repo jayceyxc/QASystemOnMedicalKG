@@ -8,8 +8,11 @@ from question_classifier import *
 from question_parser import *
 from answer_search import *
 
-'''问答类'''
+
 class ChatBotGraph:
+    """
+    问答类
+    """
     def __init__(self):
         self.classifier = QuestionClassifier()
         self.parser = QuestionPaser()
@@ -26,6 +29,7 @@ class ChatBotGraph:
             return answer
         else:
             return '\n'.join(final_answers)
+
 
 if __name__ == '__main__':
     handler = ChatBotGraph()

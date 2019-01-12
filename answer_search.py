@@ -6,6 +6,7 @@
 
 from py2neo import Graph
 
+
 class AnswerSearcher:
     def __init__(self):
         self.g = Graph(

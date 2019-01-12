@@ -7,6 +7,7 @@
 import os
 import ahocorasick
 
+
 class QuestionClassifier:
     def __init__(self):
         cur_dir = '/'.join(os.path.abspath(__file__).split('/')[:-1])

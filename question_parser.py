@@ -4,6 +4,7 @@
 # Author: lhy<lhy_in_blcu@126.com,https://huangyong.github.io>
 # Date: 18-10-4
 
+
 class QuestionPaser:
 
     '''构建实体节点'''
