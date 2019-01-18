@@ -180,6 +180,5 @@ class QuestionPaser:
         return sql
 
 
-
 if __name__ == '__main__':
     handler = QuestionPaser()
